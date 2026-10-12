@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechSphere — Explore the Web</title>
+
+  <!-- 1. Inter UI font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- 2. BubbledotICG-FinePos CDN font -->
+  <link
+    href="https://db.onlinewebfonts.com/c/8cb707a9b8a73f8a7403336b861c3074?family=BubbledotICG-FinePos"
+    rel="stylesheet"
+  />
+
+  <!-- 4. Font Awesome 6.5.2 -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="top">
+  <!-- Full-viewport cover background video -->
+  <div class="bg">
+    <video class="bg-video" autoplay muted loop playsinline>
+      <source
+        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260809_012548_ef22562c-c0ae-4816-ad9d-f8922af4e6a7.mp4"
+        type="video/mp4"
+      />
+    </video>
+  </div>
+
+  <!-- Scroll-reactive fade-in dark frosted overlay -->
+  <div class="bg-scroll-overlay" id="bgScrollOverlay" aria-hidden="true"></div>
+
+  <!-- Mobile Overlay & Menu Sheet -->
+  <div class="mobile-overlay" id="mobileOverlay" hidden></div>
+  <div class="mobile-menu" id="mobileMenu" hidden aria-hidden="true">
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a href="/" class="mobile-nav-link active">Home</a>
+      <a href="/categories/ai/" class="mobile-nav-link">Topics</a>
+      <a href="/articles/web-data/web-crawling/" class="mobile-nav-link">Web Mining</a>
+      <a href="/about/" class="mobile-nav-link">About</a>
+      <a href="/methodology/" class="mobile-signin-btn">Project Info</a>
+    </nav>
+  </div>
+
+  <!-- Single-viewport main page -->
+  <div class="page">
+    <!-- 1) Header -->
+    <header class="header">
+      <a href="/" class="logo-btn" aria-label="TechSphere Homepage">
+        <img src="assets/logo.webp" alt="" width="52" height="52" />
+      </a>
+
+      <nav class="nav-pill" aria-label="Main navigation">
+        <a href="/" class="nav-link active">Home</a>
+        <a href="/categories/ai/" class="nav-link">Topics</a>
+        <a href="/articles/web-data/web-crawling/" class="nav-link">Web Mining</a>
+        <a href="/about/" class="nav-link">About</a>
+      </nav>
+
+      <a href="/methodology/" class="sign-in-btn">Project Info</a>
+
+      <!-- Mobile hamburger toggle button -->
+      <button
+        class="burger-btn"
+        id="burgerBtn"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+    </header>
+
+    <!-- 2) Hero -->
+    <main class="hero">
+
+      <!-- Exact two-line headline -->
+      <h1 class="headline anim">
+        <span class="line-1">Web Mining</span>
+        <span class="line-2">Beyond The Surface</span>
+      </h1>
+
+      <!-- Exact copy subhead -->
+      <p class="subhead anim" style="--d: 0.28s">
+        Explore how web crawlers discover pages, follow links and respect robots.txt while turning the web into structured, searchable knowledge.
+      </p>
+
+      <!-- CTA button -->
+      <div class="cta-wrap anim" style="--d: 0.4s">
+        <a href="#explore" class="cta-btn" id="ctaBtn">Explore The Project</a>
+      </div>
+    </main>
+
+    <!-- 3) Stats footer -->
+    <footer class="stats-footer">
+      <div class="stat-item anim" style="--d: 0.5s">
+        <span class="stat-icon">&lt;</span>
+        <div class="stat-val-wrap">
+          <span class="stat-number" data-target="40" data-decimals="0">0</span><span class="stat-suffix">&nbsp;Pages</span>
+        </div>
+        <span class="stat-label">Connected Pages</span>
+      </div>
+
+      <div class="stat-item anim" style="--d: 0.58s">
+        <span class="stat-icon">%</span>
+        <div class="stat-val-wrap">
+          <span class="stat-number" data-target="100" data-decimals="0">0</span><span class="stat-suffix">%</span>
+        </div>
+        <span class="stat-label">Robots Rules Tested</span>
+      </div>
+
+      <div class="stat-item anim" style="--d: 0.66s">
+        <span class="stat-icon">*</span>
+        <div class="stat-val-wrap">
+          <span class="stat-number" data-target="5" data-decimals="0">0</span><span class="stat-suffix">&nbsp;Topics</span>
+        </div>
+        <span class="stat-label">Knowledge Categories</span>
+      </div>
+
+      <div class="stat-item anim" style="--d: 0.74s">
+        <span class="stat-icon">#</span>
+        <div class="stat-val-wrap">
+          <span class="stat-number" data-target="2" data-decimals="0">0</span><span class="stat-suffix">&nbsp;Methods</span>
+        </div>
+        <span class="stat-label">Discovery Methods</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Explore Project Content Section (Flows smoothly below the hero) -->
+  <section class="explore-section" id="explore">
+    <div class="explore-content-wrap">
+      <div class="explore-top-bar">
+        <div class="eyebrow">TechSphere / Web Mining Project</div>
+        <a href="#top" class="explore-close-btn" id="exploreBackBtn" aria-label="Back to Top">
+          <i class="fa-solid fa-arrow-up"></i>
+          <span>Back to Top</span>
+        </a>
+      </div>
+
+      <h2 class="explore-title">Explore the Knowledge Hub</h2>
+      <p class="explore-lead">
+        TechSphere is structured into 40 interconnected pages to demonstrate web crawling, URL discovery, robots.txt compliance, duplicate detection, and link analysis.
+      </p>
+
+      <!-- 5 Knowledge Categories -->
+      <h3 class="section-heading">Knowledge Categories (5 Topics)</h3>
+      <div class="category-cards-grid">
+        <a href="/categories/ai/" class="cat-card">
+          <div class="cat-card-icon"><i class="fa-solid fa-brain"></i></div>
+          <div class="cat-card-body">
+            <h4>Artificial Intelligence</h4>
+            <p>Machine learning, neural networks, LLMs, and RAG architectures.</p>
+            <span class="cat-count">6 Articles &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/categories/cybersecurity/" class="cat-card">
+          <div class="cat-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="cat-card-body">
+            <h4>Cybersecurity</h4>
+            <p>Encryption, authentication, phishing defense, and zero-trust.</p>
+            <span class="cat-count">6 Articles &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/categories/programming/" class="cat-card">
+          <div class="cat-card-icon"><i class="fa-solid fa-code"></i></div>
+          <div class="cat-card-body">
+            <h4>Programming</h4>
+            <p>Data structures, algorithmic complexity, Python, JS, and APIs.</p>
+            <span class="cat-count">6 Articles &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/categories/cloud/" class="cat-card">
+          <div class="cat-card-icon"><i class="fa-solid fa-cloud"></i></div>
+          <div class="cat-card-body">
+            <h4>Cloud Computing</h4>
+            <p>Containers, Kubernetes, CI/CD pipelines, and serverless.</p>
+            <span class="cat-count">6 Articles &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/categories/web-data/" class="cat-card cat-card-featured">
+          <div class="cat-card-icon"><i class="fa-solid fa-spider"></i></div>
+          <div class="cat-card-body">
+            <h4>Web &amp; Data Mining</h4>
+            <p>Crawlers, robots.txt, sitemaps, PageRank, and TF-IDF similarity.</p>
+            <span class="cat-count">6 Core Articles &rarr;</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Core Web Mining & Crawler Articles -->
+      <h3 class="section-heading" style="margin-top: 42px;">Core Web Mining Articles</h3>
+      <div class="article-grid">
+        <a class="article-link" href="/articles/web-data/web-crawling/">
+          <div class="small-category">Web &amp; Data Mining</div>
+          <h3>How Web Crawlers Work</h3>
+          <p>Follow links to discover pages systematically with BFS traversal.</p>
+        </a>
+        <a class="article-link" href="/articles/web-data/robots-protocol/">
+          <div class="small-category">Web &amp; Data Mining</div>
+          <h3>Understanding robots.txt</h3>
+          <p>Rules, directives, disallow paths, and crawler compliance.</p>
+        </a>
+        <a class="article-link" href="/articles/web-data/sitemaps/">
+          <div class="small-category">Web &amp; Data Mining</div>
+          <h3>Sitemaps and URL Discovery</h3>
+          <p>How XML sitemaps guide efficient and structured URL harvesting.</p>
+        </a>
+        <a class="article-link" href="/articles/web-data/link-analysis/">
+          <div class="small-category">Web &amp; Data Mining</div>
+          <h3>Link Analysis and PageRank</h3>
+          <p>Graph structures, in-degrees, out-degrees, and node authority.</p>
+        </a>
+        <a class="article-link" href="/articles/web-data/tfidf-similarity/">
+          <div class="small-category">Web &amp; Data Mining</div>
+          <h3>TF-IDF and Text Similarity</h3>
+          <p>Vectorizing terms and detecting duplicated page content.</p>
+        </a>
+        <a class="article-link" href="/methodology/">
+          <div class="small-category">Project Methodology</div>
+          <h3>Crawler Experiment Setup</h3>
+          <p>Controlled testbed specifications and verification benchmarks.</p>
+        </a>
+      </div>
+
+      <footer class="site-footer" style="margin-top: 50px; padding: 24px 0 0;">
+        <span>© TechSphere · Educational web-mining demonstration</span>
+        <div class="footer-links">
+          <a href="/about/">About</a>
+          <a href="/methodology/">Methodology</a>
+          <a href="/authors/">Authors</a>
+          <a href="/contact/">Contact</a>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+  <script src="main.js"></script>
+</body>
+</html>

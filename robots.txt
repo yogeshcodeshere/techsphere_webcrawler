@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /drafts/
+Disallow: /internal/
+
+Sitemap: https://YOUR-DOMAIN/sitemap.xml

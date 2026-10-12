@@ -1,0 +1,242 @@
+[
+  {
+    "path": "/",
+    "title": "Home",
+    "type": "home",
+    "category": ""
+  },
+  {
+    "path": "/categories/ai/",
+    "title": "Artificial Intelligence",
+    "type": "category",
+    "category": "ai"
+  },
+  {
+    "path": "/articles/ai/what-is-machine-learning/",
+    "title": "What Is Machine Learning?",
+    "type": "article",
+    "category": "ai"
+  },
+  {
+    "path": "/articles/ai/neural-networks/",
+    "title": "Neural Networks Explained",
+    "type": "article",
+    "category": "ai"
+  },
+  {
+    "path": "/articles/ai/llms-explained/",
+    "title": "Large Language Models",
+    "type": "article",
+    "category": "ai"
+  },
+  {
+    "path": "/articles/ai/rag-systems/",
+    "title": "Retrieval-Augmented Generation",
+    "type": "article",
+    "category": "ai"
+  },
+  {
+    "path": "/articles/ai/computer-vision/",
+    "title": "Computer Vision Basics",
+    "type": "article",
+    "category": "ai"
+  },
+  {
+    "path": "/articles/ai/model-evaluation/",
+    "title": "Evaluating AI Models",
+    "type": "article",
+    "category": "ai"
+  },
+  {
+    "path": "/categories/cybersecurity/",
+    "title": "Cybersecurity",
+    "type": "category",
+    "category": "cybersecurity"
+  },
+  {
+    "path": "/articles/cybersecurity/encryption-basics/",
+    "title": "Encryption Basics",
+    "type": "article",
+    "category": "cybersecurity"
+  },
+  {
+    "path": "/articles/cybersecurity/phishing-attacks/",
+    "title": "Recognising Phishing Attacks",
+    "type": "article",
+    "category": "cybersecurity"
+  },
+  {
+    "path": "/articles/cybersecurity/password-security/",
+    "title": "Password Security",
+    "type": "article",
+    "category": "cybersecurity"
+  },
+  {
+    "path": "/articles/cybersecurity/web-security/",
+    "title": "Web Application Security",
+    "type": "article",
+    "category": "cybersecurity"
+  },
+  {
+    "path": "/articles/cybersecurity/network-defense/",
+    "title": "Network Defense",
+    "type": "article",
+    "category": "cybersecurity"
+  },
+  {
+    "path": "/articles/cybersecurity/zero-trust/",
+    "title": "Zero Trust Principles",
+    "type": "article",
+    "category": "cybersecurity"
+  },
+  {
+    "path": "/categories/programming/",
+    "title": "Programming",
+    "type": "category",
+    "category": "programming"
+  },
+  {
+    "path": "/articles/programming/data-structures/",
+    "title": "Data Structures",
+    "type": "article",
+    "category": "programming"
+  },
+  {
+    "path": "/articles/programming/algorithms/",
+    "title": "Algorithms and Complexity",
+    "type": "article",
+    "category": "programming"
+  },
+  {
+    "path": "/articles/programming/python/",
+    "title": "Python for Practical Projects",
+    "type": "article",
+    "category": "programming"
+  },
+  {
+    "path": "/articles/programming/javascript/",
+    "title": "JavaScript on the Web",
+    "type": "article",
+    "category": "programming"
+  },
+  {
+    "path": "/articles/programming/apis/",
+    "title": "Understanding APIs",
+    "type": "article",
+    "category": "programming"
+  },
+  {
+    "path": "/articles/programming/git-workflows/",
+    "title": "Git Workflows",
+    "type": "article",
+    "category": "programming"
+  },
+  {
+    "path": "/categories/cloud/",
+    "title": "Cloud Computing",
+    "type": "category",
+    "category": "cloud"
+  },
+  {
+    "path": "/articles/cloud/cloud-computing/",
+    "title": "Cloud Computing Explained",
+    "type": "article",
+    "category": "cloud"
+  },
+  {
+    "path": "/articles/cloud/docker-containers/",
+    "title": "Docker and Containers",
+    "type": "article",
+    "category": "cloud"
+  },
+  {
+    "path": "/articles/cloud/ci-cd-pipelines/",
+    "title": "CI/CD Pipelines",
+    "type": "article",
+    "category": "cloud"
+  },
+  {
+    "path": "/articles/cloud/kubernetes/",
+    "title": "Kubernetes Fundamentals",
+    "type": "article",
+    "category": "cloud"
+  },
+  {
+    "path": "/articles/cloud/serverless/",
+    "title": "Serverless Computing",
+    "type": "article",
+    "category": "cloud"
+  },
+  {
+    "path": "/articles/cloud/monitoring/",
+    "title": "Application Monitoring",
+    "type": "article",
+    "category": "cloud"
+  },
+  {
+    "path": "/categories/web-data/",
+    "title": "Web & Data Mining",
+    "type": "category",
+    "category": "web-data"
+  },
+  {
+    "path": "/articles/web-data/web-crawling/",
+    "title": "How Web Crawlers Work",
+    "type": "article",
+    "category": "web-data"
+  },
+  {
+    "path": "/articles/web-data/robots-protocol/",
+    "title": "Understanding robots.txt",
+    "type": "article",
+    "category": "web-data"
+  },
+  {
+    "path": "/articles/web-data/sitemaps/",
+    "title": "Sitemaps and URL Discovery",
+    "type": "article",
+    "category": "web-data"
+  },
+  {
+    "path": "/articles/web-data/search-engines/",
+    "title": "How Search Engines Discover Pages",
+    "type": "article",
+    "category": "web-data"
+  },
+  {
+    "path": "/articles/web-data/tfidf-similarity/",
+    "title": "TF-IDF and Text Similarity",
+    "type": "article",
+    "category": "web-data"
+  },
+  {
+    "path": "/articles/web-data/link-analysis/",
+    "title": "Link Analysis and PageRank",
+    "type": "article",
+    "category": "web-data"
+  },
+  {
+    "path": "/about/",
+    "title": "About TechSphere",
+    "type": "utility",
+    "category": ""
+  },
+  {
+    "path": "/methodology/",
+    "title": "Project Methodology",
+    "type": "utility",
+    "category": ""
+  },
+  {
+    "path": "/authors/",
+    "title": "Authors & Credits",
+    "type": "utility",
+    "category": ""
+  },
+  {
+    "path": "/contact/",
+    "title": "Contact & Feedback",
+    "type": "utility",
+    "category": ""
+  }
+]
