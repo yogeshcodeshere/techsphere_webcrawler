@@ -1,0 +1,5 @@
+techsphere_web_mining/
+*.py
+requirements.txt
+*.pyc
+__pycache__/

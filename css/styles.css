@@ -486,13 +486,14 @@ body.menu-open {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: end;
   text-align: center;
   width: 100%;
   max-width: 900px;
   flex: 1;
   min-height: 0;
   z-index: 1;
+  padding-bottom: 40px;
 }
 
 /* Trust row */
