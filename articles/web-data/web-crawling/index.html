@@ -24,6 +24,8 @@
   <div class="mobile-menu" id="mobileMenu" hidden aria-hidden="true">
     <nav class="mobile-nav" aria-label="Mobile navigation">
       <a href="/" class="mobile-nav-link">Home</a>
+      <a href="/crawler-view/" class="mobile-nav-link">Crawler View</a>
+      <a href="/case-study/" class="mobile-nav-link">Case Study</a>
       <a href="/categories/ai/" class="mobile-nav-link">Topics</a>
       <a href="/articles/web-data/web-crawling/" class="mobile-nav-link active">Web Mining</a>
       <a href="/about/" class="mobile-nav-link">About</a>
@@ -39,6 +41,8 @@
 
     <nav class="nav-pill" aria-label="Main navigation">
       <a href="/" class="nav-link">Home</a>
+      <a href="/crawler-view/" class="nav-link">Crawler View</a>
+      <a href="/case-study/" class="nav-link">Case Study</a>
       <a href="/categories/ai/" class="nav-link">Topics</a>
       <a href="/articles/web-data/web-crawling/" class="nav-link active">Web Mining</a>
       <a href="/about/" class="nav-link">About</a>
@@ -79,5 +83,11 @@
             links = extract_links(html)   <span class="comment"># 6. Extract links</span>
             <span class="keyword">for</span> link <span class="keyword">in</span> links:
                 <span class="keyword">if</span> is_valid_same_domain(link):
-                    queue.append(link)    <span class="comment"># 7. Enqueue new links</span></div><p><strong>Level-by-Level Visitation Order:</strong><br>Level 0 (Start Seed Page) &rarr; Level 1 (Direct links: Page A, Page B, Page C) &rarr; Level 2 (Sub-pages: Page D, Page E, Page F, Page G, Page H). This guarantees that shallow, authoritative pages are indexed before deep nested resources.</p><h2>How This Connects to TechSphere</h2><p>TechSphere provides 40 interconnected public pages structured into 5 knowledge categories, along with designated disallowed directories (<code>/drafts/</code> and <code>/internal/</code>). This structure allows researchers to verify BFS traversal order, measure URL normalization accuracy, and validate robots.txt rule compliance.</p><p><a class="text-link" href="/methodology/">Review the Python Crawler Experiment Setup &rarr;</a></p></article><aside class="article-aside"><strong>Explore next</strong><p><a class="text-link" href="/articles/web-data/robots-protocol/">Understanding robots.txt</a></p><p><a class="text-link" href="/articles/web-data/sitemaps/">Sitemaps and URL Discovery</a></p><p><a class="text-link" href="/articles/web-data/link-analysis/">Link Analysis &amp; PageRank</a></p><p><a class="text-link" href="/methodology/">Project Methodology</a></p></aside></div><h2 class="section-heading" style="margin-top:56px">Related reading</h2><div class="article-grid"><a class="article-link" href="/articles/web-data/robots-protocol/"><div class="small-category">Web &amp; Data Mining</div><h3>Understanding robots.txt</h3><p>A public set of crawl instructions for compliant bots.</p></a><a class="article-link" href="/articles/web-data/sitemaps/"><div class="small-category">Web &amp; Data Mining</div><h3>Sitemaps and URL Discovery</h3><p>Help crawlers find a site&#x27;s intended public URLs.</p></a><a class="article-link" href="/methodology/"><div class="small-category">Research Methodology</div><h3>Experiment Evaluation</h3><p>Controlled testbed specifications and benchmark metrics.</p></a></div></main><footer class="site-footer"><span>© TechSphere · Educational web-mining demonstration</span><div class="footer-links"><a href="/methodology/">Methodology</a><a href="/authors/">Authors</a><a href="/contact/">Contact</a></div></footer>  <script src="/main.js"></script>
+                    queue.append(link)    <span class="comment"># 7. Enqueue new links</span></div><p><strong>Level-by-Level Visitation Order:</strong><br>Level 0 (Start Seed Page) &rarr; Level 1 (Direct links: Page A, Page B, Page C) &rarr; Level 2 (Sub-pages: Page D, Page E, Page F, Page G, Page H). This guarantees that shallow, authoritative pages are indexed before deep nested resources.</p><h2>How This Connects to TechSphere</h2><p>TechSphere provides 40 interconnected public pages structured into 5 knowledge categories, along with designated disallowed directories (<code>/drafts/</code> and <code>/internal/</code>). This structure allows researchers to verify BFS traversal order, measure URL normalization accuracy, and validate robots.txt rule compliance.</p><p><a class="text-link" href="/methodology/">Review the Python Crawler Experiment Setup &rarr;</a></p></article><aside class="article-aside"><strong>Explore next</strong><p><a class="text-link" href="/articles/web-data/robots-protocol/">Understanding robots.txt</a></p><p><a class="text-link" href="/articles/web-data/sitemaps/">Sitemaps and URL Discovery</a></p><p><a class="text-link" href="/articles/web-data/link-analysis/">Link Analysis &amp; PageRank</a></p><p><a class="text-link" href="/methodology/">Project Methodology</a></p></aside></div><h2 class="section-heading" style="margin-top:56px">Related reading</h2><div class="article-grid"><a class="article-link" href="/articles/web-data/robots-protocol/"><div class="small-category">Web &amp; Data Mining</div><h3>Understanding robots.txt</h3><p>A public set of crawl instructions for compliant bots.</p></a><a class="article-link" href="/articles/web-data/sitemaps/"><div class="small-category">Web &amp; Data Mining</div><h3>Sitemaps and URL Discovery</h3><p>Help crawlers find a site&#x27;s intended public URLs.</p></a><a class="article-link" href="/methodology/"><div class="small-category">Research Methodology</div><h3>Experiment Evaluation</h3><p>Controlled testbed specifications and benchmark metrics.</p></a></div></main><footer class="site-footer"><span>© TechSphere · Educational web-mining demonstration</span><div class="footer-links">
+      <a href="/crawler-view/">Crawler View</a>
+      <a href="/case-study/">Case Study</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/authors/">Authors</a>
+      <a href="/contact/">Contact</a>
+    </div></footer>  <script src="/main.js"></script>
 </body></html>

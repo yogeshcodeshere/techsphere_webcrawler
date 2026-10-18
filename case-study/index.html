@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Case Study: Reddit, AI Scrapers, and the 2024 robots.txt RFC 9309 Precedence Battle.">
+  <title>Case Study: Reddit vs AI Crawlers | TechSphere</title>
+
+  <!-- 1. Inter UI font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- 2. Retro display font -->
+  <link href="https://db.onlinewebfonts.com/c/8cb707a9b8a73f8a7403336b861c3074?family=BubbledotICG-FinePos" rel="stylesheet">
+
+  <!-- 3. Font Awesome 6.5.2 -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="content-site">
+  <!-- Full-viewport cover background video -->
+  <div class="bg">
+    <video class="bg-video" autoplay muted loop playsinline>
+      <source
+        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260809_012548_ef22562c-c0ae-4816-ad9d-f8922af4e6a7.mp4"
+        type="video/mp4"
+      />
+    </video>
+  </div>
+
+  <!-- 50-60% black layer with blur -->
+  <div class="bg-blur-layer"></div>
+
+  <!-- Mobile Overlay & Menu Sheet -->
+  <div class="mobile-overlay" id="mobileOverlay" hidden></div>
+  <div class="mobile-menu" id="mobileMenu" hidden aria-hidden="true">
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a href="/" class="mobile-nav-link">Home</a>
+      <a href="/crawler-view/" class="mobile-nav-link">Crawler View</a>
+      <a href="/case-study/" class="mobile-nav-link active">Case Study</a>
+      <a href="/categories/ai/" class="mobile-nav-link">Topics</a>
+      <a href="/articles/web-data/web-crawling/" class="mobile-nav-link">Web Mining</a>
+      <a href="/about/" class="mobile-nav-link">About</a>
+      <a href="/methodology/" class="mobile-signin-btn">Project Info</a>
+    </nav>
+  </div>
+
+  <!-- Main Site Header -->
+  <header class="header page-header">
+    <a href="/" class="logo-btn" aria-label="TechSphere Homepage">
+      <img src="/assets/logo.webp" alt="" width="52" height="52" />
+    </a>
+
+    <nav class="nav-pill" aria-label="Main navigation">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/crawler-view/" class="nav-link">Crawler View</a>
+      <a href="/case-study/" class="nav-link active">Case Study</a>
+      <a href="/categories/ai/" class="nav-link">Topics</a>
+      <a href="/articles/web-data/web-crawling/" class="nav-link">Web Mining</a>
+      <a href="/about/" class="nav-link">About</a>
+    </nav>
+
+    <a href="/methodology/" class="sign-in-btn">Project Info</a>
+
+    <button
+      class="burger-btn"
+      id="burgerBtn"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="mobileMenu"
+    >
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+    </button>
+  </header>
+
+  <main class="content-wrap">
+    <div class="breadcrumbs"><a href="/">Home</a> / Case Study: Reddit vs. AI Crawlers</div>
+    <div class="eyebrow"><i class="fa-solid fa-scale-balanced"></i> TechSphere / Academic Case Study</div>
+    <h1 class="page-title">Reddit &amp; The 2024 AI Scraping Wars</h1>
+    <p class="page-lead">
+      How the generative AI training boom turned <code>robots.txt</code> (RFC 9309) from an obscure gentleman's agreement into a multi-million-dollar legal and data governance battleground.
+    </p>
+
+    <!-- Executive Highlight Ribbon -->
+    <div class="sim-metrics-grid" style="margin-bottom: 36px;">
+      <div class="sim-metric-card">
+        <span class="sim-metric-label">Licensing Deal <i class="fa-solid fa-handshake"></i></span>
+        <span class="sim-metric-val" style="color: #4ade80;">$60M/yr</span>
+      </div>
+      <div class="sim-metric-card">
+        <span class="sim-metric-label">Protocol Invoked <i class="fa-solid fa-file-shield"></i></span>
+        <span class="sim-metric-val" style="color: #38bdf8;">RFC 9309</span>
+      </div>
+      <div class="sim-metric-card">
+        <span class="sim-metric-label">Blanket Block Date <i class="fa-solid fa-calendar-xmark"></i></span>
+        <span class="sim-metric-val" style="color: #f87171;">July 2024</span>
+      </div>
+      <div class="sim-metric-card">
+        <span class="sim-metric-label">Search Index Impact <i class="fa-solid fa-triangle-exclamation"></i></span>
+        <span class="sim-metric-val" style="color: #fde047;">Bing / DDG</span>
+      </div>
+    </div>
+
+    <!-- Case Study Core Body -->
+    <div class="utility-copy" style="max-width: 860px;">
+      <h2 class="section-heading"><i class="fa-solid fa-bolt"></i> 1. The Catalyst: The AI Training Gold Rush (2023–2024)</h2>
+      <p>
+        For nearly two decades, Reddit operated as the open conversational backbone of the web. Anyone could deploy a crawler, index public threads, or leverage the free developer API.
+      </p>
+      <p>
+        When Large Language Models (LLMs) such as OpenAI's GPT-4, Anthropic's Claude, and Google's Gemini emerged, labs realized that raw encyclopedic text alone was insufficient. State-of-the-art conversational agents required natural human dialogue, community nuances, technical debugging threads, and real-time opinion. Reddit had 18+ years of exactly that data.
+      </p>
+      <p>
+        In mid-2023, Reddit moved to monetize its official API. However, automated crawlers (e.g., <code>GPTBot</code>, <code>CCBot</code>, <code>ClaudeBot</code>, and Perplexity) bypassed the API pricing structure by deploying headless web crawlers to systematically scrape raw HTML content directly from the public web.
+      </p>
+
+      <div class="note" style="margin: 28px 0; background: rgba(56, 189, 248, 0.05); border-color: rgba(56, 189, 248, 0.2);">
+        <strong>The Core Problem:</strong> Tech giants were training multi-billion-dollar commercial models using Reddit's data infrastructure, consuming server compute and bandwidth without compensating the host platform or providing algorithmic attribution.
+      </div>
+
+      <h2 class="section-heading" style="margin-top: 48px;"><i class="fa-solid fa-ban"></i> 2. The Nuclear Option: July 2024 <code>robots.txt</code> Lockdown</h2>
+      <p>
+        In July 2024, Reddit executed one of the most drastic <code>robots.txt</code> updates in web history. Instead of standard granular disallow paths, Reddit changed its root rule to a blanket crawl prohibition:
+      </p>
+
+      <pre style="background: rgba(8, 8, 12, 0.75); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 14px; padding: 18px 22px; font-family: ui-monospace, monospace; font-size: 13px; color: #f87171; line-height: 1.6; margin: 18px 0;">
+# Reddit's Updated Root robots.txt (July 2024)
+User-agent: *
+Disallow: /
+      </pre>
+
+      <p>
+        The repercussions were instantaneous. Search engines that strictly obeyed RFC 9309—including Microsoft Bing, DuckDuckGo, and European search engines—suddenly lost the ability to fetch and display newly published Reddit discussions. Reddit results began vanishing from non-Google search results across the globe.
+      </p>
+
+      <h2 class="section-heading" style="margin-top: 48px;"><i class="fa-solid fa-code-compare"></i> 3. RFC 9309 In Action: The Googlebot Exception</h2>
+      <p>
+        Just months prior, Google signed an estimated <strong>$60 million per year</strong> content-licensing and AI training agreement with Reddit. To facilitate search indexing and model access for Google while maintaining the wall against other crawlers, Reddit utilized <strong>RFC 9309 Section 2.2.1 (User-Agent Specificity &amp; Precedence)</strong>.
+      </p>
+
+      <pre style="background: rgba(8, 8, 12, 0.75); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 14px; padding: 18px 22px; font-family: ui-monospace, monospace; font-size: 13px; line-height: 1.6; margin: 18px 0;">
+<span style="color: #94a3b8;"># Rule Block 1: Specific match for Googlebot (Takes precedence under RFC 9309)</span>
+<span style="color: #38bdf8;">User-agent: Googlebot</span>
+<span style="color: #86efac;">Allow: /</span>
+
+<span style="color: #94a3b8;"># Rule Block 2: Wildcard fallback for all other crawlers</span>
+<span style="color: #fca5a5;">User-agent: *</span>
+<span style="color: #f87171;">Disallow: /</span>
+      </pre>
+
+      <p>
+        Under RFC 9309, when a crawler parses <code>robots.txt</code>, it searches for a record with a <code>User-agent:</code> line matching its own identifier. If a specific match is found (e.g. <code>Googlebot</code>), that record applies and all generic wildcard blocks (<code>*</code>) are ignored. This rule allowed Google to continue indexing Reddit while legally and algorithmically barring competitors.
+      </p>
+
+      <h2 class="section-heading" style="margin-top: 48px;"><i class="fa-solid fa-shield-halved"></i> 4. Technical Limitation: Advisory Protocol vs. Real Enforcement</h2>
+      <p>
+        A vital finding in our Web Mining evaluation is that <strong><code>robots.txt</code> is an advisory protocol</strong>. It relies entirely on the crawler voluntarily reading and obeying the file.
+      </p>
+      <p>
+        Rogue scraping bots simply forged their <code>User-Agent</code> headers or outright bypassed the file. As a result, Reddit had to back its <code>robots.txt</code> rules with hard technical infrastructure: Cloudflare bot management, rate limits, IP fingerprinting, and legal cease-and-desist notices against non-compliant AI crawlers.
+      </p>
+
+      <h2 class="section-heading" style="margin-top: 48px;"><i class="fa-solid fa-table-list"></i> 5. Comparative Evaluation Matrix</h2>
+      <p>
+        How TechSphere's testbed compares against real-world crawling architectures:
+      </p>
+
+      <div style="overflow-x: auto; margin: 20px 0;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 13px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 14px; overflow: hidden;">
+          <thead>
+            <tr style="background: rgba(255, 255, 255, 0.06); text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.12);">
+              <th style="padding: 14px 16px;">Dimension</th>
+              <th style="padding: 14px 16px;">TechSphere Testbed</th>
+              <th style="padding: 14px 16px;">Reddit (2024 Case)</th>
+              <th style="padding: 14px 16px;">Wikipedia</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.06);">
+              <td style="padding: 12px 16px; font-weight: 600; color: #38bdf8;">Graph Scale</td>
+              <td style="padding: 12px 16px;">42 Controlled static pages</td>
+              <td style="padding: 12px 16px;">Billions of dynamic threads</td>
+              <td style="padding: 12px 16px;">60M+ Encyclopedic articles</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.06);">
+              <td style="padding: 12px 16px; font-weight: 600; color: #38bdf8;">robots.txt Model</td>
+              <td style="padding: 12px 16px;">Targeted (<code>/drafts/</code>, <code>/internal/</code>)</td>
+              <td style="padding: 12px 16px;">Blanket block (<code>Disallow: /</code>)</td>
+              <td style="padding: 12px 16px;">Administrative &amp; diff filters</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.06);">
+              <td style="padding: 12px 16px; font-weight: 600; color: #38bdf8;">User-Agent Specificity</td>
+              <td style="padding: 12px 16px;">Wildcard <code>*</code> demonstration</td>
+              <td style="padding: 12px 16px;">Commercial <code>Googlebot</code> exception</td>
+              <td style="padding: 12px 16px;">Rate-limited polite crawler tiers</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px 16px; font-weight: 600; color: #38bdf8;">Deduplication Method</td>
+              <td style="padding: 12px 16px;">$O(1)$ Hash set (<code>seen = set()</code>)</td>
+              <td style="padding: 12px 16px;">Canonical URL metadata tags</td>
+              <td style="padding: 12px 16px;">Redirect &amp; disambiguation mapping</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Live Simulator CTA Card -->
+      <div style="background: rgba(56, 189, 248, 0.06); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 18px; padding: 24px 28px; margin-top: 40px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+        <div>
+          <h3 style="font-size: 18px; color: #ffffff; margin-bottom: 6px;">Test RFC 9309 In Real Time</h3>
+          <p style="font-size: 13.5px; color: #94a3b8; margin: 0;">
+            Watch our BFS engine enforce robots.txt rules live on TechSphere's testbed.
+          </p>
+        </div>
+        <a href="/crawler-view/" class="sim-btn sim-btn-primary" style="text-decoration: none;">
+          <i class="fa-solid fa-play"></i> Open Live Simulator
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <span>© TechSphere · Educational web-mining demonstration</span>
+    <div class="footer-links">
+      <a href="/crawler-view/">Crawler View</a>
+      <a href="/case-study/">Case Study</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/authors/">Authors</a>
+      <a href="/contact/">Contact</a>
+    </div>
+  </footer>
+
+  <script src="/main.js"></script>
+</body>
+</html>

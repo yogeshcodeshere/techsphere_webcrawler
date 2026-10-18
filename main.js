@@ -54,9 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Close on resize > 720px
+    // Close on resize > 880px
     window.addEventListener('resize', () => {
-      if (window.innerWidth > 720 && burgerBtn.getAttribute('aria-expanded') === 'true') {
+      if (window.innerWidth > 880 && burgerBtn.getAttribute('aria-expanded') === 'true') {
         closeMenu();
       }
     });
@@ -208,5 +208,6 @@ document.addEventListener('DOMContentLoaded', () => {
     handleScrollOverlay();
   }
 });
+
 
 

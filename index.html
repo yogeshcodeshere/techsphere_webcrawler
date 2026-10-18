@@ -50,6 +50,8 @@
   <div class="mobile-menu" id="mobileMenu" hidden aria-hidden="true">
     <nav class="mobile-nav" aria-label="Mobile navigation">
       <a href="/" class="mobile-nav-link active">Home</a>
+      <a href="/crawler-view/" class="mobile-nav-link">Crawler View</a>
+      <a href="/case-study/" class="mobile-nav-link">Case Study</a>
       <a href="/categories/ai/" class="mobile-nav-link">Topics</a>
       <a href="/articles/web-data/web-crawling/" class="mobile-nav-link">Web Mining</a>
       <a href="/about/" class="mobile-nav-link">About</a>
@@ -66,11 +68,13 @@
       </a>
 
       <nav class="nav-pill" aria-label="Main navigation">
-        <a href="/" class="nav-link active">Home</a>
-        <a href="/categories/ai/" class="nav-link">Topics</a>
-        <a href="/articles/web-data/web-crawling/" class="nav-link">Web Mining</a>
-        <a href="/about/" class="nav-link">About</a>
-      </nav>
+      <a href="/" class="nav-link active">Home</a>
+      <a href="/crawler-view/" class="nav-link">Crawler View</a>
+      <a href="/case-study/" class="nav-link">Case Study</a>
+      <a href="/categories/ai/" class="nav-link">Topics</a>
+      <a href="/articles/web-data/web-crawling/" class="nav-link">Web Mining</a>
+      <a href="/about/" class="nav-link">About</a>
+    </nav>
 
       <a href="/methodology/" class="sign-in-btn">Project Info</a>
 
@@ -160,6 +164,22 @@
         TechSphere is structured into 40 interconnected pages to demonstrate web crawling, URL discovery, robots.txt compliance, duplicate detection, and link analysis.
       </p>
 
+      <!-- Interactive Crawler View Callout Banner -->
+      <div style="background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.28); border-radius: 18px; padding: 22px 26px; margin-bottom: 34px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+        <div>
+          <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #38bdf8; font-weight: 600; display: block; margin-bottom: 6px;">
+            <i class="fa-solid fa-robot"></i> Live Crawler Perspective Engine
+          </span>
+          <h3 style="font-size: 18px; color: #ffffff; margin: 0 0 6px;">See TechSphere Through a Web Crawler's Eyes</h3>
+          <p style="font-size: 13px; color: #cbd5e1; margin: 0; max-width: 620px;">
+            Watch the FIFO queue pop URLs, check robots.txt compliance on <code>/drafts/</code> and <code>/internal/</code> in real-time, and observe $O(1)$ duplicate filtering.
+          </p>
+        </div>
+        <a href="/crawler-view/" class="sim-btn sim-btn-primary" style="text-decoration: none;">
+          <i class="fa-solid fa-play"></i> Open Crawler Simulator &rarr;
+        </a>
+      </div>
+
       <!-- 5 Knowledge Categories -->
       <h3 class="section-heading">Knowledge Categories (5 Topics)</h3>
       <div class="category-cards-grid">
@@ -247,11 +267,12 @@
       <footer class="site-footer" style="margin-top: 50px; padding: 24px 0 0;">
         <span>© TechSphere · Educational web-mining demonstration</span>
         <div class="footer-links">
-          <a href="/about/">About</a>
-          <a href="/methodology/">Methodology</a>
-          <a href="/authors/">Authors</a>
-          <a href="/contact/">Contact</a>
-        </div>
+      <a href="/crawler-view/">Crawler View</a>
+      <a href="/case-study/">Case Study</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/authors/">Authors</a>
+      <a href="/contact/">Contact</a>
+    </div>
       </footer>
     </div>
   </section>

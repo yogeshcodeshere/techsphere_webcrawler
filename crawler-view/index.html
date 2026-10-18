@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Interactive Web Crawler & robots.txt Simulator for TechSphere.">
+  <title>Crawler View & Live Simulator | TechSphere</title>
+
+  <!-- 1. Inter UI font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- 2. Retro display font -->
+  <link href="https://db.onlinewebfonts.com/c/8cb707a9b8a73f8a7403336b861c3074?family=BubbledotICG-FinePos" rel="stylesheet">
+
+  <!-- 3. Font Awesome 6.5.2 -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="content-site">
+  <!-- Full-viewport cover background video -->
+  <div class="bg">
+    <video class="bg-video" autoplay muted loop playsinline>
+      <source
+        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260809_012548_ef22562c-c0ae-4816-ad9d-f8922af4e6a7.mp4"
+        type="video/mp4"
+      />
+    </video>
+  </div>
+
+  <!-- 50-60% black layer with blur -->
+  <div class="bg-blur-layer"></div>
+
+  <!-- Mobile Overlay & Menu Sheet -->
+  <div class="mobile-overlay" id="mobileOverlay" hidden></div>
+  <div class="mobile-menu" id="mobileMenu" hidden aria-hidden="true">
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a href="/" class="mobile-nav-link">Home</a>
+      <a href="/crawler-view/" class="mobile-nav-link active">Crawler View</a>
+      <a href="/case-study/" class="mobile-nav-link">Case Study</a>
+      <a href="/categories/ai/" class="mobile-nav-link">Topics</a>
+      <a href="/articles/web-data/web-crawling/" class="mobile-nav-link">Web Mining</a>
+      <a href="/about/" class="mobile-nav-link">About</a>
+      <a href="/methodology/" class="mobile-signin-btn">Project Info</a>
+    </nav>
+  </div>
+
+  <!-- Main Site Header -->
+  <header class="header page-header">
+    <a href="/" class="logo-btn" aria-label="TechSphere Homepage">
+      <img src="/assets/logo.webp" alt="" width="52" height="52" />
+    </a>
+
+    <nav class="nav-pill" aria-label="Main navigation">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/crawler-view/" class="nav-link active">Crawler View</a>
+      <a href="/case-study/" class="nav-link">Case Study</a>
+      <a href="/categories/ai/" class="nav-link">Topics</a>
+      <a href="/articles/web-data/web-crawling/" class="nav-link">Web Mining</a>
+      <a href="/about/" class="nav-link">About</a>
+    </nav>
+
+    <a href="/methodology/" class="sign-in-btn">Project Info</a>
+
+    <button
+      class="burger-btn"
+      id="burgerBtn"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="mobileMenu"
+    >
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+    </button>
+  </header>
+
+  <main class="content-wrap">
+    <div class="breadcrumbs"><a href="/">Home</a> / Crawler View &amp; Live Simulator</div>
+    <div class="eyebrow"><i class="fa-solid fa-robot"></i> TechSphere / Bot Perspective Engine</div>
+    <h1 class="page-title">Crawler Perspective &amp; Live Simulator</h1>
+    <p class="page-lead">
+      Experience how automated search engines discover, evaluate, and crawl TechSphere. Watch the <strong>FIFO queue (BFS)</strong> drain in real time, observe <strong>robots.txt (RFC 9309)</strong> rule enforcement on <code>/drafts/</code> and <code>/internal/</code>, and see instant <strong>duplicate link elimination</strong>.
+    </p>
+
+    <!-- Interactive Simulation Controls -->
+    <div class="sim-controls-card">
+      <div class="sim-btn-group">
+        <button class="sim-btn sim-btn-primary" id="simPlayBtn">
+          <i class="fa-solid fa-play"></i> Run Simulation
+        </button>
+        <button class="sim-btn sim-btn-secondary" id="simStepBtn">
+          <i class="fa-solid fa-forward-step"></i> Step Forward
+        </button>
+        <button class="sim-btn sim-btn-danger" id="simResetBtn">
+          <i class="fa-solid fa-rotate-left"></i> Reset
+        </button>
+      </div>
+
+      <div class="sim-options-group">
+        <label class="sim-toggle-label">
+          <input type="checkbox" id="simRobotsToggle" checked />
+          <span>Obey <code>robots.txt</code> (RFC 9309)</span>
+        </label>
+
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span>Speed:</span>
+          <select id="simSpeedSelect" class="sim-select">
+            <option value="slow">0.5x (Slow)</option>
+            <option value="normal" selected>1.0x (Normal)</option>
+            <option value="fast">2.0x (Fast)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Metrics Ribbon -->
+    <div class="sim-metrics-grid">
+      <div class="sim-metric-card">
+        <span class="sim-metric-label">In FIFO Queue <i class="fa-solid fa-layer-group"></i></span>
+        <span class="sim-metric-val" id="metricQueue">1</span>
+      </div>
+      <div class="sim-metric-card">
+        <span class="sim-metric-label">Pages Fetched (200 OK) <i class="fa-solid fa-check"></i></span>
+        <span class="sim-metric-val" id="metricFetched" style="color: #4ade80;">0</span>
+      </div>
+      <div class="sim-metric-card">
+        <span class="sim-metric-label">Robots Blocked <i class="fa-solid fa-shield-halved"></i></span>
+        <span class="sim-metric-val" id="metricBlocked" style="color: #f87171;">0</span>
+      </div>
+      <div class="sim-metric-card">
+        <span class="sim-metric-label">Duplicates Avoided <i class="fa-solid fa-filter"></i></span>
+        <span class="sim-metric-val" id="metricDupes" style="color: #fde047;">0</span>
+      </div>
+    </div>
+
+    <!-- Active Step Status Banner -->
+    <div class="sim-status-banner">
+      <div class="sim-status-left">
+        <div class="sim-pulse-dot"></div>
+        <div class="sim-status-text" id="simStatusText">
+          Ready to start. Seed URL <strong>https://techsphere.domain/</strong> enqueued at Depth 0.
+        </div>
+      </div>
+      <span style="font-size: 11px; font-family: ui-monospace; opacity: 0.7;">Algorithm: Breadth-First Search (BFS)</span>
+    </div>
+
+    <!-- 3-Column Live Workspace -->
+    <div class="sim-workspace-grid">
+      <!-- Col 1: FIFO Queue -->
+      <div class="sim-col">
+        <div class="sim-col-header">
+          <span><i class="fa-solid fa-list-ol"></i> BFS FIFO Queue</span>
+          <span style="font-size: 10px; opacity: 0.7;"><code>collections.deque</code></span>
+        </div>
+        <div class="sim-col-body" id="simQueueList">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+      <!-- Col 2: Live Decision & Terminal Stream -->
+      <div class="sim-col">
+        <div class="sim-col-header">
+          <span><i class="fa-solid fa-terminal"></i> Decision Engine &amp; Log Stream</span>
+          <span style="font-size: 10px; color: #4ade80;">● LIVE</span>
+        </div>
+        <div class="sim-terminal" id="simTerminal">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+      <!-- Col 3: Topological Site Tree & Visited Set -->
+      <div class="sim-col">
+        <div class="sim-col-header">
+          <span><i class="fa-solid fa-sitemap"></i> Discovered Graph</span>
+          <span style="font-size: 10px; opacity: 0.7;"><code>seen = set()</code></span>
+        </div>
+        <div class="sim-col-body" id="simTree">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Classroom Presentation Explainer / Teacher Guide -->
+    <h2 class="section-heading" style="margin-top: 36px;">What This Demonstrates (Evaluator's Guide)</h2>
+    <div class="utility-copy">
+      <div class="feature-cards-3">
+        <div class="feature-card-sm">
+          <h4>1. Breadth-First Traversal (BFS)</h4>
+          <p>
+            The crawler uses a FIFO queue (<code>collections.deque</code>) to exhaust Level 0 (Home), then Level 1 (5 Categories &amp; Utility), then Level 2 (30 Articles). This guarantees shortest hop-count discovery and avoids deep recursion traps.
+          </p>
+        </div>
+        <div class="feature-card-sm">
+          <h4>2. RFC 9309 robots.txt Compliance</h4>
+          <p>
+            Before issuing any HTTP request, the candidate URL is checked against root <code>/robots.txt</code>. Notice that <code>/drafts/</code> and <code>/internal/</code> are intercepted and skipped immediately without sending network requests!
+          </p>
+        </div>
+        <div class="feature-card-sm">
+          <h4>3. $O(1)$ Duplicate Elimination</h4>
+          <p>
+            Because every page has a header linking back to <code>/</code>, <code>/about/</code>, and categories, the site contains over 890 link references. The Python hash set (<code>visited = set()</code>) detects duplicate occurrences in $O(1)$ time, preventing infinite loops.
+          </p>
+        </div>
+      </div>
+
+      <div class="note">
+        <strong>Try the Interactive Test:</strong> Uncheck <em>"Obey robots.txt"</em> at the top and hit <strong>Run Simulation</strong>. You will observe that without robots compliance, the crawler trespasses into <code>/drafts/</code> and <code>/internal/</code>. Re-checking the box immediately re-enforces the RFC 9309 security boundary!
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <span>© TechSphere · Educational web-mining demonstration</span>
+    <div class="footer-links">
+      <a href="/crawler-view/">Crawler View</a>
+      <a href="/case-study/">Case Study</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/authors/">Authors</a>
+      <a href="/contact/">Contact</a>
+    </div>
+  </footer>
+
+  <script src="/main.js"></script>
+  <script src="/js/crawler-simulator.js"></script>
+</body>
+</html>

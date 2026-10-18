@@ -40,4 +40,6 @@
   <url><loc>https://YOUR-DOMAIN/methodology/</loc></url>
   <url><loc>https://YOUR-DOMAIN/authors/</loc></url>
   <url><loc>https://YOUR-DOMAIN/contact/</loc></url>
+  <url><loc>https://YOUR-DOMAIN/crawler-view/</loc></url>
+  <url><loc>https://YOUR-DOMAIN/case-study/</loc></url>
 </urlset>
